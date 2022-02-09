@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+
+<!-- M2-D2 ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you will have a short biography section about yourself, the top albums of your life, 
+the worst album you ever listened to and everything related to the music you love.
+
+ASSIGNMENT RULES
+- The project must be pushed to a new repository and linked in EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
+- To test the page, open it with your browser and inspect it with developer tools / device emulator.
+- Use Bootstrap4.6 classes to create the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+
+NOTE:
+Even the most experienced designers need inspiration.
+Spend some time surfing the web researching the best way of representing the albums you love.
+Could be the Amazon way, the Spotify or Apple music way or any other music collection out there.
+
+HINT: Manage your time in order to finish the structure and responsiveness before focusing on the details.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <style>
+        /* EXERCISE 1
+            For every Album displayed in the page we'd like to have a consistent appearence.
+            Create the template of an Album component (you can start from a bootstrap one or create your own)
+            You will use it to display every album in the page.
+            
+            You should have consistency in these elements:
+            - The album card
+            - The album cover
+            - The album title
+            - The album group / singer / dj
+            - The album genre
+            - The album duration
+            - etc
+
+            create CSS rules to style them if needed
+            ...to make sure every Album component looks the same.
+         */
+        body {
+            background-color: rgb(223, 223, 223);
+        }
+
+        h1 {
+            background-color: rgb(190, 190, 190);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h2 {
+            background-color: rgb(190, 190, 190);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 0;
+            font-size: 1.5em;
+        }
+
+        article {
+            margin: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EXERCISE 2 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must link every section in your page.
+        -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light stickey-top">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#albums">Albums<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reviews">Album reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#worst">Worst albums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <h1>Albums of the Beatles</h1>
+    <article>The Beatles were an English rock band formed in Liverpool in 1960. With a line-up comprising John Lennon,
+        Paul McCartney, George Harrison and Ringo Starr, they are regarded as the most influential band of all time[1]
+        and were integral to the development of 1960s counterculture and popular music's recognition as an art form.[2]
+        Rooted in skiffle, beat and 1950s rock and roll, their sound incorporated elements of classical music and
+        traditional pop in innovative ways; the band later explored music styles ranging from ballads and Indian music
+        to psychedelia and hard rock. As pioneers in recording, songwriting and artistic presentation, the Beatles
+        revolutionised many aspects of the music industry and were often publicised as leaders of the era's youth and
+        sociocultural movements.[3]</article>
+    <br><br>
+    <!-- EXERCISE 3
+            Create a responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller viewport)
+            - 2 albums per row when you are on a small screen
+        -->
+    <section id="albums">
+        <div class='container-fluid'>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Please%20Please%20Me.jpg?itok=tzOPWi8O"
+                        class='img-fluid w-100' alt="Please Please Me">
+                    <p class="title ">Please Please Me</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/With%20the%20Beatles.jpg?itok=3cGBeX7f"
+                        class='img-fluid w-100' alt="with the Beatles">
+                    <p class="title ">With the Beatles</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/A%20Hard%20Days%20Night.jpg?itok=gDdWFeas"
+                        class='img-fluid w-100' alt="a hard day's night">
+                    <p class="title ">a hard day's night</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/The%20Beatles%20for%20Sale.jpg?itok=wCTmlGz3"
+                        class='img-fluid w-100' alt="Beatles for sale">
+                    <p class="title ">Beatles for sale</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Help.jpg?itok=Jz2wnyjj"
+                        class='img-fluid w-100' alt="help!">
+                    <p class="title ">help!</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Rubber%20Soul.jpg?itok=TsRSHu1Q"
+                        class='img-fluid w-100' alt="rubber soul">
+                    <p class="title ">rubber soul</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Revolver.jpg?itok=J0Q8YaGs"
+                        class='img-fluid w-100' alt="revolver">
+                    <p class="title ">revolver</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Sgt%20Pepper.jpg?itok=0CcJLuzl"
+                        class='img-fluid w-100' alt="Sgt Pepper's Lonely Hearts Club Band">
+                    <p class="title ">Sgt Pepper's Lonely Hearts Club Band</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Magical-Mystery-Tour.jpg?itok=8midCi2f"
+                        class='img-fluid w-100' alt="Magical Mystery Tour">
+                    <p class="title ">Magical Mystery Tour</p>
+                    <p class="released">22 MARCH 1963</p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- EXERCISE 4
+            Create a section for the album reviews.
+            Pick one of your favourite albums, and create a section with:
+            - Cover Image
+            - Title
+            - Band
+            - Duration
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+    <section id="reviews">
+        <br><br>
+        <h2>Album reviews</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img src="https://thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/CoverLetItBe.jpg?itok=giGHBt2f"
+                        class='img-fluid w-100' alt="Let It Be">
+
+                </div>
+                <div class="col-6">
+                    <p class="title">Let It Be</p>
+                    <ol>
+                        <li>Two Of Us</li>
+                        <li>Dig A Pony</li>
+                        <li>Across The Universe</li>
+                        <li>...</li>
+                    </ol>
+                    <p>Reviews</p>
+                    <p>"THEY WERE QUITE GOOD SESSIONS ONCE WE GOT INTO APPLE I REMEMBER YOU KNOW SITTING ROUND QUITE
+                        ENJOYING THE MUSIC, IT WAS INTERESTING MUSIC TO PLAY AND WE ENDED UP ON THE ROOF."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <!-- EXERCISE 5
+            Worst album list! Choose the albums you dislike or some you think are overrated and list it
+            in this "hall of shame" chart! 
+        -->
+    <section id="worst">
+        <h2>hall of shame</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+    <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are a fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+
+    <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "squared" (use CSS to achieve that).
+            Put at least 20 covers (also repeated) to have a nice tapestry effect and see how Bootstrap handles it.
+        -->
+
+    <!-- EXERCISE 8
+            Implement a footer with some information / social links.
+        -->
+
+    <!-- ############ EXTRA:
+        EXERCISE 9
+            Create an album details area which will be toggled on and off by clicking on the album image.
+        -->
+
+    <!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible).
+            (hint: look for a boostrap component that can handle the job for you. You can always rely on DOM manipulation if you can't find it)
+        -->
+
+    <!--
+         EXERCISE 11
+            Add in the footer the number of how many ALBUMS are present on the page. 
+            Create the JavaScript logic that runs when the page finished loading and 
+            counts the albums and applies the number in the area of the footer you've previously decided.
+        -->
+
+    <!-- FOR THE OTHER EXERCISE --> -->
+    <script src='M2-D2-D3.js'></script>
+</body>
+
+</html>
